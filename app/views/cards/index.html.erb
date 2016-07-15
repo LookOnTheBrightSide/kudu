@@ -1,0 +1,34 @@
+<div class="row">
+	<h1>Index Cards</h1>
+</div>
+<!-- /.row -->
+
+<% @cards.each do |card|%>
+<div class="row">
+	<div class="card">
+		<div class="row">
+			<h4 class="card__title col-md-12">
+				<%= card.title %>
+			</h4><!-- /.card__title -->
+		</div><!-- /.row -->
+
+		<div class="row">
+			<div class="card__image col-md-4">
+				<%= link_to (image_tag card.image.url(:thumb)), card, class: "thumbnail img-responsive"%>
+			</div><!-- /.card__image -->
+			<p class="card__description col-md-8">
+				<%= card.description %>
+			</p>
+		</div><!-- /.row -->
+
+		<div class="row">
+			<p class="card__username col-md-4">
+				<%= card.user.email %>
+			</p>
+			<div class="col-md-offset-5 col-md-3">
+				<%= link_to "See More", card, class:"btn btn-info btn-more" %>
+			</div><!-- /.more -->
+		</div><!-- /.card -->
+	</div><!-- /.row -->
+</div><!-- /.row -->
+<% end %>

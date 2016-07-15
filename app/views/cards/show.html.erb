@@ -1,0 +1,7 @@
+<h1>Show</h1>
+<%= image_tag @card.image.url , class: "img-responsive"%>
+<%= @card.inspect %>
+<br>
+<%= link_to "All Cards", cards_path %>
+<%= link_to "Edit", edit_card_path %>
+<%= link_to "Delete", card_path, method: :delete, data: {confirm:"Delete Card?"}  %>
